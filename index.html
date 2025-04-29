@@ -159,96 +159,74 @@
       <hr />
 
       <section>
-        <h3>1. Supporting Visualization</h3>
+        <h3>1. Scatter Plot Visualization Assessment</h3>
         <figure>
-          <img src="./scatter_regression.png" alt="Scatter plot of officer age vs. total allegations, highlighting younger cluster" />
-          <figcaption>Scatter plot of officer age vs. total allegations, highlighting younger cluster</figcaption>
+          <img src="./scatter_regression.png" alt="Scatter plot of officer age vs. total allegations" />
+          <figcaption>Scatter plot of officer age vs. total allegations</figcaption>
         </figure>
         <table>
           <thead>
             <tr>
               <th>Design Choice</th>
-              <th>Earnest / Deceptive Score</th>
+              <th>Earnest / Deceptive Score</th>
               <th>Rationale</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Red markers on ages 20–30</td>
-              <td style="text-align:center;">+1.5</td>
-              <td>Bright red draws the eye to the dense cloud of points at younger ages, making the “younger bias” immediately obvious.</td>
+              <td>Scatter plot of raw counts vs. age</td>
+              <td style="text-align:center;">-1</td>
+              <td>Uses raw allegation counts without adjusting for the number of officers at each age, possibly exaggerating trends tied to larger age-group populations.</td>
             </tr>
             <tr>
-              <td>Steep downward regression line (red)</td>
-              <td style="text-align:center;">+1</td>
-              <td>Emphasizes a strong negative slope—implying allegations plummet with age—even if the true trend is more moderate.</td>
-            </tr>
-            <tr>
-              <td>Confidence‐interval shading (narrow band)</td>
-              <td style="text-align:center;">+0.5</td>
-              <td>Conveys statistical rigor, but the narrow band downplays uncertainty so the negative trend feels certain.</td>
-            </tr>
-            <tr>
-              <td>Low‐opacity or omission of older outliers</td>
-              <td style="text-align:center;">–1</td>
-              <td>Makes high‐allegation older officers less visible, reducing counter‐examples and reinforcing the story of “younger officers suffer more complaints.”</td>
+              <td>Linear regression trendline</td>
+              <td style="text-align:center;">-0.5</td>
+              <td>Suggests a smooth, strong negative relationship between age and allegations, even though the underlying relationship may not be linear.</td>
             </tr>
           </tbody>
         </table>
       </section>
+      
 
       <section>
-        <h3>2. Opposing Visualization</h3>
+        <h3>2. Bar Chart Visualization Assessment</h3>
         <figure>
-          <img src="./grouped_bar_chart.png" alt="Grouped bar chart of normalized allegations per officer by age group" />
-          <figcaption>Grouped bar chart of normalized allegations per officer by age group</figcaption>
+          <img src="./grouped_bar_chart.png" alt="Bar chart of normalized allegations per officer by age group" />
+          <figcaption>Bar chart of normalized allegations per officer by age group</figcaption>
         </figure>
         <table>
           <thead>
             <tr>
               <th>Design Choice</th>
-              <th>Earnest / Deceptive Score</th>
+              <th>Earnest / Deceptive Score</th>
               <th>Rationale</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Normalization by group size</td>
-              <td style="text-align:center;">–1.5</td>
-              <td>All bars flatten to the same height—erasing real differences so it “proves” there is no age bias.</td>
+              <td>Normalization by age group size</td>
+              <td style="text-align:center;">+1.5</td>
+              <td>Provides a fair comparison across age groups by controlling for how many officers are in each group. Enables proportionate interpretation of allegations.</td>
             </tr>
             <tr>
-              <td>Uniform blue fill for every bar</td>
-              <td style="text-align:center;">–1</td>
-              <td>Same color for all bars makes each group look equivalent, minimizing any visual cue of disparity.</td>
+              <td>Uniform single-color bars (blue)</td>
+              <td style="text-align:center;">+1.5</td>
+              <td>Reduces perceptual bias by removing visual emphasis. Encourages interpretation based solely on data differences rather than styling.</td>
             </tr>
             <tr>
-              <td>Minimal, neutral title &amp; axis labels</td>
-              <td style="text-align:center;">+0.5</td>
-              <td>A dry heading (“Normalized Allegations per Officer by Age Group”) frames the chart as objective, discouraging deeper scrutiny.</td>
+              <td>Simple, neutral title and labeling</td>
+              <td style="text-align:center;">+1</td>
+              <td>Frames the visualization in a factual tone, suggesting objectivity and limiting rhetorical influence.</td>
             </tr>
           </tbody>
         </table>
       </section>
-
+      
       <section>
         <h2>Final Reflection</h2>
-        <p>The process of designing the scatter and regression chart, and the bar chart really showed how small choices can dramatically 
-          shift a story. On one hand, binning ages and normalizing allegation counts felt straightforward: once the data were cleaned, 
-          it was a matter of grouping and division. On the other hand, deciding how to color and annotate those plots revealed itself as 
-          the trickiest part. Even though the underlying numbers didn’t change, tweaking marker opacity or choosing a single hue versus 
-          a gradient completely altered what draws your eye first. I was surprised by how easily a single arrow or a bold regression line could overpower the 
-          data’s true ambiguity.</p>
-        <p>This experience has refined my definition of “ethical analysis and visualization” into a balance between persuasive clarity and transparent disclosure. 
-          Ethical visuals should never force a conclusion the data don’t support; instead, they should guide the viewer toward the patterns the analyst genuinely 
-          believes are there. That means declaring every normalization step, explaining why outliers were deemphasized, and annotating confidence intervals honestly. 
-          In practice, ethical visualization means wielding design tools, color, scale, and annotation, only to illuminate, not to obscure.
-        </p>
-        <p>What is the line between acceptable persuasion and outright deception? Acceptable persuasion uses visual emphasis to spotlight what is already a 
-          statistically credible trend. Misleading choices, by contrast, actively distort the data: truncating axes to exaggerate tiny changes, aggregating 
-          categories until all nuance vanishes, or coloring points to divert attention from inconvenient clusters. If any design decision hides a data 
-          transformation or manipulates perception without clear disclosure, it slips into the realm of deception. In my view, that boundary is bright.
-        </p>
+        <p>The process of designing the scatter and regression chart, and the bar chart really showed how small choices can dramatically shift a story. On one hand, binning ages and normalizing allegation counts felt straightforward: once the data were cleaned, it was a matter of grouping and division. On the other hand, deciding how to color and annotate those plots revealed itself as the trickiest part. Even though the underlying numbers didn’t change, tweaking marker opacity or choosing a single hue versus a gradient completely altered what draws your eye first. I was surprised by how easily a single arrow or a bold regression line could overpower the data’s true ambiguity.</p>
+        <p>This experience has refined my definition of “ethical analysis and visualization” into a balance between persuasive clarity and transparent disclosure. Ethical visuals should never force a conclusion the data don’t support; instead, they should guide the viewer toward the patterns the analyst genuinely believes are there. That means declaring every normalization step, explaining why outliers were deemphasized, and annotating confidence intervals honestly. In practice, ethical visualization means wielding design tools, color, scale, and annotation, only to illuminate, not to obscure.</p>
+        <p>What is the line between acceptable persuasion and outright deception? Acceptable persuasion uses visual emphasis to spotlight what is already a statistically credible trend. Misleading choices, by contrast, actively distort the data: truncating axes to exaggerate tiny changes, aggregating categories until all nuance vanishes, or coloring points to divert attention from inconvenient clusters. If any design decision hides a data transformation or manipulates perception without clear disclosure, it slips into the realm of deception. In my view, that boundary is bright.</p>
       </section>
     </main>
   </body>
