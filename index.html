@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project 2 Report</title>
+    <style>
+      :root {
+        --color-neutral-95: hsl(220 10% 95%);
+        --color-neutral-90: hsl(220 10% 90%);
+        --color-neutral-80: hsl(220 10% 80%);
+        --color-neutral-70: hsl(220 10% 70%);
+        --color-neutral-60: hsl(220 10% 60%);
+        --color-neutral-50: hsl(220 10% 50%);
+        --color-neutral-40: hsl(220 10% 40%);
+        --color-neutral-30: hsl(220 10% 30%);
+        --color-neutral-20: hsl(220 10% 20%);
+        --color-neutral-10: hsl(220 10% 10%);
+      }
+
+      html {
+        font: 100%/1.5 system-ui;
+        counter-reset: figure;
+        background: var(--color-neutral-95);
+        max-width: min(75vw, 80em);
+        margin: 0 auto;
+        padding: 1rem;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      /* Headings */
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        line-height: 1.1;
+        font-weight: 600;
+        text-wrap: balance;
+      }
+
+      h1,
+      h2 {
+        border-bottom: 1px solid var(--color-neutral-80);
+        padding-bottom: 0.2em;
+      }
+
+      h1 {
+        margin-block: 1em 0.5rem;
+        font-size: clamp(2.5em, 150% + 2vh + 2vw, 10vmin);
+        font-weight: 800;
+      }
+
+      h1 small {
+        display: block;
+        width: fit-content;
+        padding: 0.2em 0.5em;
+        margin-inline: auto;
+        color: white;
+        background: var(--color-neutral-40);
+        font-size: 40%;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+
+      h2 {
+        font-size: 180%;
+        color: var(--color-neutral-30);
+      }
+
+      h3 {
+        font-size: 130%;
+      }
+
+      /* Lists */
+      ul,
+      ol {
+        padding-inline-start: 2em;
+      }
+
+      li::marker {
+        color: var(--color-neutral-40);
+      }
+      li + li {
+        margin-top: 0.2em;
+      }
+
+      /* Sectioning elements */
+      header {
+        padding-block: 1em;
+        text-align: center;
+      }
+
+      main {
+        background: white;
+        color: var(--color-neutral-20);
+        border-radius: 1rem;
+        padding: 1rem 2rem;
+      }
+
+      /* Figures */
+      figure {
+        margin: 1em 0;
+        padding: 0.5rem;
+        margin-inline: -0.5em;
+        border: 1px solid var(--color-neutral-80);
+        box-shadow: 0 0.1em 0.2em var(--color-neutral-95);
+        text-align: center;
+        background: white;
+      }
+      figcaption {
+        font: 500 75% system-ui;
+        background: var(--color-neutral-95);
+        padding: 0.5rem;
+        margin: -0.5rem;
+        margin-top: 0.5rem;
+        counter-increment: figure;
+        text-align: left;
+      }
+      figcaption::before {
+        content: 'Figure ' counter(figure) ': ';
+        font-weight: bold;
+        color: var(--color-neutral-40);
+      }
+
+      /* Tables */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1em 0;
+      }
+      th,
+      td {
+        border: 1px solid var(--color-neutral-80);
+        padding: 0.5em;
+        text-align: left;
+      }
+      th {
+        background: var(--color-neutral-90);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>
+        <small>Project 2</small>
+        Persuasive or Deceptive Visualization?
+      </h1>
+      <p><strong>Borngreat Omoma-Edosa</strong> — <em>oomomaedosa@ucsd.edu</em></p>
+    </header>
+    <main>
+      <h2>Proposition</h2>
+      <p><strong>Allegations of police misconduct disproportionately target younger officers, indicating potential biases or issues in training and supervision.</strong></p>
+
+      <hr />
+
+      <section>
+        <h3>1. Supporting Visualization</h3>
+        <figure>
+          <img src="./scatter_regression.png" alt="Scatter plot of officer age vs. total allegations, highlighting younger cluster" />
+          <figcaption>Scatter plot of officer age vs. total allegations, highlighting younger cluster</figcaption>
+        </figure>
+        <table>
+          <thead>
+            <tr>
+              <th>Design Choice</th>
+              <th>Earnest / Deceptive Score</th>
+              <th>Rationale</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Red markers on ages 20–30</td>
+              <td style="text-align:center;">+1.5</td>
+              <td>Bright red draws the eye to the dense cloud of points at younger ages, making the “younger bias” immediately obvious.</td>
+            </tr>
+            <tr>
+              <td>Steep downward regression line (red)</td>
+              <td style="text-align:center;">+1</td>
+              <td>Emphasizes a strong negative slope—implying allegations plummet with age—even if the true trend is more moderate.</td>
+            </tr>
+            <tr>
+              <td>Confidence‐interval shading (narrow band)</td>
+              <td style="text-align:center;">+0.5</td>
+              <td>Conveys statistical rigor, but the narrow band downplays uncertainty so the negative trend feels certain.</td>
+            </tr>
+            <tr>
+              <td>Low‐opacity or omission of older outliers</td>
+              <td style="text-align:center;">–1</td>
+              <td>Makes high‐allegation older officers less visible, reducing counter‐examples and reinforcing the story of “younger officers suffer more complaints.”</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h3>2. Opposing Visualization</h3>
+        <figure>
+          <img src="./grouped_bar_chart.png" alt="Grouped bar chart of normalized allegations per officer by age group" />
+          <figcaption>Grouped bar chart of normalized allegations per officer by age group</figcaption>
+        </figure>
+        <table>
+          <thead>
+            <tr>
+              <th>Design Choice</th>
+              <th>Earnest / Deceptive Score</th>
+              <th>Rationale</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Normalization by group size</td>
+              <td style="text-align:center;">–1.5</td>
+              <td>All bars flatten to the same height—erasing real differences so it “proves” there is no age bias.</td>
+            </tr>
+            <tr>
+              <td>Uniform blue fill for every bar</td>
+              <td style="text-align:center;">–1</td>
+              <td>Same color for all bars makes each group look equivalent, minimizing any visual cue of disparity.</td>
+            </tr>
+            <tr>
+              <td>Minimal, neutral title &amp; axis labels</td>
+              <td style="text-align:center;">+0.5</td>
+              <td>A dry heading (“Normalized Allegations per Officer by Age Group”) frames the chart as objective, discouraging deeper scrutiny.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>Final Reflection</h2>
+        <p>The process of designing the scatter and regression chart, and the bar chart really showed how small choices can dramatically 
+          shift a story. On one hand, binning ages and normalizing allegation counts felt straightforward: once the data were cleaned, 
+          it was a matter of grouping and division. On the other hand, deciding how to color and annotate those plots revealed itself as 
+          the trickiest part. Even though the underlying numbers didn’t change, tweaking marker opacity or choosing a single hue versus 
+          a gradient completely altered what draws your eye first. I was surprised by how easily a single arrow or a bold regression line could overpower the 
+          data’s true ambiguity.</p>
+        <p>This experience has refined my definition of “ethical analysis and visualization” into a balance between persuasive clarity and transparent disclosure. 
+          Ethical visuals should never force a conclusion the data don’t support; instead, they should guide the viewer toward the patterns the analyst genuinely 
+          believes are there. That means declaring every normalization step, explaining why outliers were deemphasized, and annotating confidence intervals honestly. 
+          In practice, ethical visualization means wielding design tools, color, scale, and annotation, only to illuminate, not to obscure.
+        </p>
+        <p>What is the line between acceptable persuasion and outright deception? Acceptable persuasion uses visual emphasis to spotlight what is already a 
+          statistically credible trend. Misleading choices, by contrast, actively distort the data: truncating axes to exaggerate tiny changes, aggregating 
+          categories until all nuance vanishes, or coloring points to divert attention from inconvenient clusters. If any design decision hides a data 
+          transformation or manipulates perception without clear disclosure, it slips into the realm of deception. In my view, that boundary is bright.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
